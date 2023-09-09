@@ -1,0 +1,66 @@
+### Make a booking request to valid url and book a ticket with valid accountId
+POST http://localhost:3000/movie/ticketsBooking
+Content-Type: application/json
+
+{
+    "accountId":"1234567890",
+    "tickets":{
+        "infant":5,
+        "child":4,
+        "adult":5
+    }
+}
+
+### Make a booking request with invalid accountId
+POST http://localhost:3000/movie/ticketsBooking
+Content-Type: application/json
+
+{
+    "accountId":"0",
+    "tickets":{
+        "infant":1,
+        "child":1,
+        "adult":1
+    }
+}
+
+### Make a booking request with adult no adult ticket
+POST http://localhost:3000/movie/ticketsBooking
+Content-Type: application/json
+
+{
+    "accountId":"1234567890",
+    "tickets":{
+        "infant":1,
+        "child":1,
+        "adult":0
+    }
+}
+
+### Make a booking request with total tickets exceeding the no of tickets can be booked in a request
+POST http://localhost:3000/movie/ticketsBooking
+Content-Type: application/json
+
+{
+    "accountId":"1234567890",
+    "tickets":{
+        "infant":2,
+        "child":2,
+        "adult":17
+    }
+}
+
+### Make a booking request to invalid url and book a ticket with valid accountId
+POST http://localhost:3000/dummy
+Content-Type: application/json
+
+{
+    "accountId":"1234567890",
+    "tickets":{
+        "infant":1,
+        "child":1,
+        "adult":1
+    }
+}
+
+
