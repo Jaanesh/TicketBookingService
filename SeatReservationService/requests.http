@@ -1,0 +1,8 @@
+### Make a seat reservation request
+POST http://localhost:5000/movie/ticket/reserveseats
+Content-Type: application/json
+
+{
+    "accountId":"1234567890",   
+    "totalSeats":10   
+}

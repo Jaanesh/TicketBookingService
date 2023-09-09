@@ -1,0 +1,23 @@
+### Make a payment request
+POST http://localhost:4000/movie/ticket/payment
+Content-Type: application/json
+
+{
+    "accountId":"1234567890",   
+    "ticket":{
+       "totalPrice":100,
+       "totalCount":5,
+       "adult":{
+         "count":5,
+         "price":100
+       },
+       "child":{
+         "count":0,
+         "price":0
+       },
+       "infant":{
+         "count":0,
+         "price":0
+       }
+    }
+}
