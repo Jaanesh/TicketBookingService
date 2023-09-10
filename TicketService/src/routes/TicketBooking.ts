@@ -1,10 +1,10 @@
-import { HttpStatusCode } from "axios";
+import { HttpStatusCode } from "../constants/HttpStatusCode.js";
 import {
   attachNewLoggerInstanceToReq,
   addDetailsToLoggerContext,
   printRequest,
   printResponse,
-} from "../middlewares/LoggerMiddlewares.js";
+} from "../middlewares/Logger.js";
 import {
   constructTicketBookingResponse,
   payForTickets,

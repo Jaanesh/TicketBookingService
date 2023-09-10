@@ -21,6 +21,7 @@ import {
   SeatReservationServicePayload,
   SeatReservationServiceResponse,
 } from "../types/SeatReservationService.js";
+import { BadRequestError } from "../errorHandlers/BadRequestError.js";
 
 export const validateTicketBookingReq = (
   req: Request,
@@ -30,7 +31,7 @@ export const validateTicketBookingReq = (
   const { logger } = req.session;
 
   try {
-    if (req?.body) {
+    if (req?.body?.accountId && req?.body?.tickets) {
       const { accountId, tickets } = req.body;
       const validAccount = isValidAccountId(accountId);
 
@@ -56,6 +57,8 @@ export const validateTicketBookingReq = (
       ) {
         next();
       }
+    } else {
+      throw new BadRequestError(`Booking details not present in the request.`);
     }
   } catch (err) {
     logger.error(err);

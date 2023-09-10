@@ -1,7 +1,7 @@
-import { HttpStatusCode } from "axios";
+import { HttpStatusCode } from "../constants/HttpStatusCode.js";
 
 export class HttpError extends Error {
-  private httpStatusCode: HttpStatusCode;
+  private httpStatusCode;
   constructor(name: string, message: string, httpStatusCode: HttpStatusCode) {
     super(message);
     this.name = name;

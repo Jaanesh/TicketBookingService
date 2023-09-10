@@ -11,10 +11,6 @@ import { calculateResponseTime } from "../utils/App.js";
 export class HttpClient {
   private http: AxiosInstance = axios.create();
 
-  public getAxiosInstance(): AxiosInstance {
-    return this.http;
-  }
-
   private printReqRes<ReqBodyType, ResBodyType>(
     logger: Logger,
     url: string,

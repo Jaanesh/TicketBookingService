@@ -1,7 +1,7 @@
 import express, { type Response, type Request, NextFunction } from "express";
 import log4js from "log4js";
 import "dotenv/config";
-import { attachNewLoggerInstanceToReq } from "./middlewares/LoggerMiddlewares.js";
+import { attachNewLoggerInstanceToReq } from "./middlewares/Logger.js";
 import { appLevelLogger } from "./helpers/Logger.js";
 import { NotFoundError } from "./errorHandlers/NotFoundError.js";
 import { constructErrorDetails } from "./helpers/Error.js";

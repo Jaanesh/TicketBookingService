@@ -1,4 +1,4 @@
-import { HttpStatusCode } from "axios";
+import { HttpStatusCode } from "../constants/HttpStatusCode.js";
 import { HttpError } from "../errorHandlers/HttpError.js";
 
 export function constructErrorDetails(err: Error) {
